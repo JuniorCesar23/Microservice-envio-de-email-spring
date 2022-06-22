@@ -24,6 +24,7 @@ public class EmailService {
     public EmailModel enviarEmail(EmailModel emailModel) {
 
         emailModel.setDataEmail(LocalDateTime.now());
+
         try {
 
             SimpleMailMessage message = new SimpleMailMessage();
@@ -39,9 +40,10 @@ public class EmailService {
 
         } catch (MailException e) {
             emailModel.setStatusEmail(StatusEmail.ERRO);
-        } finally {
-            return emailRepository.save(emailModel);
         }
+
+        return emailRepository.save(emailModel);
+        
     }
 
 }

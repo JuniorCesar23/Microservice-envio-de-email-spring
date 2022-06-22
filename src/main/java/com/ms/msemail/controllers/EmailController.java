@@ -20,7 +20,7 @@ public class EmailController {
     @Autowired
     private EmailService emailService;
 
-    @PostMapping
+    @PostMapping(value = "/enviando-email")
     public ResponseEntity<EmailModel> enviandoEmail(@RequestBody @Valid EmailDTO emailDTO){
         EmailModel emailModel = new EmailModel();
         BeanUtils.copyProperties(emailDTO, emailModel);

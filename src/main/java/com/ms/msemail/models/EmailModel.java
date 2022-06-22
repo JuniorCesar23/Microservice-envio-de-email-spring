@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.ms.msemail.enums.StatusEmail;
+
 import lombok.Data;
 
 @Entity
@@ -22,6 +24,6 @@ public class EmailModel implements Serializable {
     @Column(columnDefinition = "TEXT")
     private String conteudoEmail;
     private LocalDateTime dataEmail;
-    private String statusEmail;
+    private StatusEmail statusEmail;
 
 }
